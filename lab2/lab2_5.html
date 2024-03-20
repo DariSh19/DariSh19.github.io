@@ -8,8 +8,38 @@
 <body>
     <h2>Форма регистрации пользователя</h2>
  <form action="#">
-<label for="email">E-mail:</label>
-<input type="email" id="email" name="email" placeholder="Введите E-mail" required>
+E-mail
+<input type="email" id="email" name="email" placeholder="Введите E-mail" required><p>
+Пароль
+<input type="email" id="пароль" name="пароль" placeholder="Введите пароль" required><p>
+Пол
+<input type="radio" name="gender" value="male" checked>Мужчина
+<input type="radio" name="gender" value="female">Женщина<p>
+Год рождения
+<select>
+ <option>выбрать год</option>
+ <option>1960</option>
+ <option>1961</option>
+ <option>1962</option>
+ <option>1963</option>
+ <option>1964</option>
+ <option>1965</option>
+ <option>1966</option>
+ <option>1967</option>
+ <option>1968</option>
+ <option>1969</option>
+</select>-й<p>
+Я знаю:
+<p><input type="checkbox" name="a" value="Русский">Русский</p>
+<p><input type="checkbox" name="a" value="Английский">Английский</p>
+<p><input type="checkbox" name="a" value="Немецкий">Немецкий</p>
+<p><input type="checkbox" name="a" value="Испанский">Испанский</p>
+<p><input type="checkbox" name="a" value="Китайский">Китайский</p>
+Обо мне:
+<textarea name="comment" placeholder="Напишите коротко о себе" cols="40" rows="5"></textarea><p>
+<p><input type="submit" value="Готово">
+<input type="reset" value="Очистить"></p>
+
 
  </form>
 </body>
