@@ -1,0 +1,14 @@
+body{
+	background-color: black;
+	color: white;
+}
+h1,h2,h3{
+	color: red;
+	text-align: right;
+}
+p{
+	text-align: right;
+}
+em{
+	color: green;
+}
