@@ -12,7 +12,7 @@ p{
 	text-align: right;
 }
 em{
-	border: line-through double
+	border-bottom:1px dotted #f00
 	padding: 50px;
 	color: green;
 }
