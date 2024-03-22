@@ -12,6 +12,7 @@ p{
 	text-align: right;
 }
 em{
+	border: line-through double
 	padding: 50px;
 	color: green;
 }
