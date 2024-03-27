@@ -3,7 +3,7 @@ body{
 }
 h1,h2{
 	margin: 10%;
-	font-family: 'Roboto';
+	font-family:'Roboto';
 	color: red;
 	text-align: right;
 }
@@ -17,5 +17,5 @@ em{
 	color: green;
 }
 strong{
-	font-family: 'Caveat';
+	font-family:'Caveat';
 }
