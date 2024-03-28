@@ -2,20 +2,26 @@ body{
 	background: url("/images/black-background.png")
 }
 h1,h2{
-	margin: 10%;
+	margin: 8%;
 	font-family:'Roboto';
 	color: red;
 	text-align: right;
 }
 p{
-	margin: 1%;
+	margin: 5%;
 	text-align: right;
 }
 em{
 	
 	padding: 50px;
-	color: green;
+	color: rgb(60, 6, 60);
 }
 strong{
 	font-family:'Caveat';
+}
+article{
+	background: rgb(104, 102, 101); 
+	border-radius: 50px;
+	padding: 20px 30px 20px 30px;
+	margin: 7%
 }
