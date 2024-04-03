@@ -9,20 +9,37 @@
 			}
 			
 			.menu {
-					width: 200px;
+					width: 250px;
 					background: #fff;
 			}
 			
-			.menu ul {
-				list-style-image: url(/lab4/pic/minus.gif)
-					
+			ul {
+				list-style-image: url(pic/plus.gif);
+				width: 200px;	
 			}
 			
-			.menu li ul {
-				list-style-image: url(/lab4/pic/point.gif)
-					
+			li ul {
+				display:none;
+  				position: relative;
+  				top:0;
+  				width: 150px;	
 			}
 			
+			li:hover {
+				list-style-image: url(pic/minus.gif);	
+			}
+			
+			.menu li ul :hover{
+				list-style-image: url(pic/point.gif);
+			}
+			
+			li:hover ul {
+				display:block;		
+			}
+			
+			.menu li ul{
+  				list-style-image: url(pic/point.gif);
+			}
 	</style>
 </head>
 <body>
