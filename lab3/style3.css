@@ -1,28 +1,27 @@
 body{
 	background: url("/images/black-background.png")
 }
-h1,h2,h3{
-	margin: 15%
-	font-family:'Roboto';
-	color: red;
-	text-align: right;
+h1,h2,h3 {
+    font-family: 'Roboto';
+    text-align: right;
+    color: rgb(223, 20, 20);
+    margin: 15%
 }
-p{
-	margin: 5%;
-	text-align: right;
+
+strong {
+    font-family: 'Caveat';
 }
-em{
-	color: rgb(60, 6, 60);
+
+em {
+    color: rgb(255, 68, 0);
     font-style: italic;
+    background:rgb(20, 20, 14);
     border:2px solid silver;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0
-	
-}
-strong{
-	font-family:'Caveat';
 }
 .wrapper {
+    background: rgba(204, 115, 115, 0.514);
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
