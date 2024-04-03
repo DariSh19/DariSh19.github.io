@@ -11,15 +11,14 @@ h1,h2 {
 strong {
     font-family: 'Caveat';
 }
-
 em {
-    color: rgb(70, 195, 74);
+    color: rgb(143, 218, 31);
     font-style: italic;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0
 }
 .wrapper {
-    background:rgba(245, 245, 245, 0.514)
+    background: rgba(204, 115, 115, 0.514);
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
