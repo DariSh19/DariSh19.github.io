@@ -9,15 +9,15 @@ h1,h2{
 p{
 	text-align: right;
 }
+strong {
+    font-family: 'Caveat';
 em{
 	color: green;
 }
 .wrapper {
-	margin-right: auto; 
-	margin-left:  auto; 
-  
-	max-width: 960px; 
-  
-	padding-right: 10px; 
-	padding-left:  10px; 
+	max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
