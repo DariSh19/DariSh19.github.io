@@ -12,11 +12,12 @@ p{
 	text-align: right;
 }
 em{
+	color: rgb(60, 6, 60);
     font-style: italic;
     border:2px solid silver;
     border-radius: 10px;
     padding: 0
-	color: rgb(60, 6, 60);
+	
 }
 strong{
 	font-family:'Caveat';
