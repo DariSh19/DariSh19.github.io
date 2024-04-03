@@ -9,32 +9,36 @@
 			}
 			
 			.menu {
-					width: 200px;
+					width: 250px;
 					background: #fff;
 			}
 			
-			.menu ul {
-					
+			ul {
+				list-style-image: url(pic/plus.gif);
+				width: 200px;	
 			}
 			
-			.menu li {
-					
+			li ul {
+				display:none;
+  				position: relative;
+  				top:0;
+  				width: 150px;	
 			}
 			
-			.menu li a {
-					
+			li:hover {
+				list-style-image: url(pic/minus.gif);	
 			}
 			
-			.menu li a:hover {
-					
+			.menu li ul :hover{
+				list-style-image: url(pic/point.gif);
 			}
 			
-			.menu li ul {
-					
+			li:hover ul {
+				display:block;		
 			}
 			
-			.menu li li {
-					
+			.menu li ul{
+  				list-style-image: url(pic/point.gif);
 			}
 	</style>
 </head>
