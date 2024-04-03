@@ -3,6 +3,7 @@ body{
 	color: white;
 }
 h1,h2{
+	font-family: 'Roboto';
 	color: red;
 	text-align: right;
 }
