@@ -15,12 +15,11 @@ strong {
 em {
     color: rgb(70, 195, 74);
     font-style: italic;
-    border:2px solid silver;
     border-radius: 10px;
     padding: 0
 }
 .wrapper {
-    background: rgba(204, 115, 115, 0.514);
+    background:rgba(245, 245, 245, 0.514)
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
