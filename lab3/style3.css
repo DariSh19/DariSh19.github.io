@@ -13,11 +13,10 @@ strong {
 }
 
 em {
-    color: rgb(255, 68, 0);
+    color: rgb(70, 195, 74);
     font-style: italic;
-    background:rgb(20, 20, 14);
     border:2px solid silver;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 0
 }
 .wrapper {
