@@ -3,21 +3,24 @@ body{
 	color: black;
 }
 h1,h2{
-	color: red;
-	text-align: right;
+	font-family: 'Roboto';
+    text-align: right;
+    color: rgb(223, 20, 20);
+}
+strong {
+    font-family: 'Caveat';
 }
 p{
 	text-align: right;
 }
 em{
 	color: green;
+	font-style: italic;
 }
 .wrapper {
 	margin-right: auto; 
 	margin-left:  auto; 
-  
 	max-width: 960px; 
-  
 	padding-right: 10px; 
 	padding-left:  10px; 
   }
