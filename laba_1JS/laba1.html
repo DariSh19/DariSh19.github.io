@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗАДАНИЕ 1</title>
+</head>
+<body>
+    <a href="index1.html"><button>НАЗАД</button></a>
+    <a href="/laba_1JS/laba2.html"><button>ВПЕРЕД</button></a>
+    <script>
+        let age = prompt("Введите ваш возраст:");
+        let gender = prompt("Введите ваш пол (мужской или женский):");
+        if (age >= 0 && age <= 17) {
+            alert("Вам работать ещё рано — учитесь");
+        } else if ((age >= 18 && age <= 59 && gender.toLowerCase() === "мужской") || (age >= 18 && age <= 54 && gender.toLowerCase() === "женский")) {
+            alert("Вам ещё работать и работать");
+        } else if ((age >= 60 && age <= 64 && gender.toLowerCase() === "мужской") || (age >= 55 && age <= 59 && gender.toLowerCase() === "женский")) {
+            alert("Скоро пенсия!");
+        } else if ((age >= 65 && gender.toLowerCase() === "мужской") || (age >= 60 && gender.toLowerCase() === "женский")) {
+            alert("Вам пора на пенсию");
+        } else {
+            alert("Да кто ты такой?");
+        }
+    </script>
+    
+</body>
+</html>
