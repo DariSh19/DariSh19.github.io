@@ -1,67 +1,83 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Форма</title>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+    <style>
+    table {
+        width: 400px;
+        border: none;
+        margin: 10px;
+        float: left;
+    }
+    td, th {
+        border: none;
+        padding: 10px;
+    }
+    </style>
 </head>
 <body>
-    <h2>Форма регистрации пользователя</h2>
-<form action="#">
-<label for="email">E-mail</label>
-<input type="email" id="email" name="email" placeholder="Введите E-mail" required><br/>
-<label for="пароль">Пароль</label>
-<input type="email" id="пароль" name="пароль" placeholder="Введите пароль" required><br>
-
-Пол
-<input type="radio" id="men" name="gender" value="male" checked>
-<label for="men">Мужчина</label>
-<input type="radio" id="women" name="gender" value="female">
-<label for="women">Женщина</label><br>
-
-Год рождения
-<select>
- <option>выбрать год</option>
- <option>1995</option>
- <option>1996</option>
- <option>1997</option>
- <option>1998</option>
- <option>1999</option>
- <option>2000</option>
- <option>2001</option>
- <option>2002</option>
- <option>2003</option>
- <option>2004</option>
- <option>2005</option>
- <option>2006</option>
- <option>2007</option>
- <option>2008</option>
- <option>2009</option>
- <option>2010</option>
- <option>2011</option>
- <option>2012</option>
- <option>2013</option>
- <option>2014</option>
-</select>-й<p>
-Я знаю:
-<p><input type="checkbox" id="russian" name="a" value="Русский">
-<label for="russian">Русский</label></p>
-<p><input type="checkbox" id="english" name="a" value="Английский">
-<label for="english">Английский</label></p>
-<p><input type="checkbox" id="german" name="a" value="Немецкий">
-<label for="german">Немецкий</label></p>
-<p><input type="checkbox" id="spanish" name="a" value="Испанский">
-<label for="spanish">Испанский</label></p>
-<p><input type="checkbox" id="chinese" name="a" value="Китайский">
-<label for="chinese">Китайский</label></p>
-
-<p><label for="comments">Обо мне:</label>
-<textarea id="comments" name="comment" placeholder="Напишите коротко о себе" cols="40" rows="5"></textarea><p>
-
-<p><input type="submit" value="Готово">
-<input type="reset" value="Очистить"></p>
-
-
- </form>
+    <form action="#">
+        <h1>Форма регистрации пользователя</h1>
+              <table>
+              <tbody>
+              <tr>
+                  <td><label for="email">Email<em>*</em></label></td>
+                  <td><input id="email" type="email" placeholder="Введите e-mail"  maxlength=20 required></td>
+              </tr>
+              <tr>
+                  <td><label for="password">Пароль<em>*</em></label></td>
+                  <td><input id="password" placeholder="Введите пароль"</td>
+              </tr>
+              <tr>
+                  <td>Пол</td>
+                  <td><input type="radio" id="gender1"
+                   name="contact" value="male" checked>
+                  <label for="gender1">Мужчина</label>
+      
+              <input type="radio" id="gender2"
+                   name="contact" value="female">
+                  <label for="gender2">Женщина</label></td>
+              </tr>
+              
+              <tr>
+                  <td>Год рождения</td>
+                  <td><select>
+                      <option>1996</option>
+                      <option>1997</option>
+                      <option>1998</option>
+                      <option>1999</option>
+                      <option>2000</option>
+                      <option>2001</option>
+                      <option>2002</option>
+                      <option>2003</option>
+                      <option>2004</option>
+                      <option>2005</option>
+                      <option>2006</option>
+                      <option>2007</option>
+                      <option>2008</option>
+                      <option>2009</option>
+                      <option>2010</option>
+                     </select>-й</td>
+              </tr>
+              <tr>
+                  <td>Я знаю</td>
+                  <td><label for="Russian"><input id="Russian" type="checkbox"> Русский</label><br>
+          <label for="Spanish"><input id="Spanish" type="checkbox"> Испанский</label><br>
+          <label for="Deutch"><input id="Deutch" type="checkbox"> Немецкий</label><br>
+          <label for="English"><input id="English" type="checkbox"> Английский</label><br>
+          <label for="Chinese"><input id="Chinese" type="checkbox"> Китайский</label><br></td>
+              </tr>
+              <tr>
+                  <td><label for="comments">О себе</label></td>
+                  <td><textarea id="comments" placeholder="Напишите коротко о себе"></textarea></td>
+              </tr>
+              <tr>
+                  <td><input type="submit" value="Отправить информацию"></td>
+                  <td><input type="reset" value="Очистить"></td>
+              </tr>
+              </tbody>
+        </table>
+      </form>
 </body>
 </html>
