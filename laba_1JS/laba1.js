@@ -1,4 +1,3 @@
-"use strict";
 function showAge() {
 
   let age = prompt("Сколько вам лет?");
@@ -61,19 +60,21 @@ function prstNum() {
     }
   }
 
-function generateTable() {
+  function generateTable() {
     const animals = ['dog', 'dog', 'dog', 'cat', 'cat'];
-    const rows = prompt('Введите количество строк таблицы:');
+    const rows = prompt('Введите количество строк:');
     const table = [];
+  
     for (let i = 0; i < rows; i++) {
       const row = [];
+  
       for (let j = 0; j < 6; j++) {
-        const randomIndex = Math.floor(Math.random() * animals.length);
-        row.push(animals[randomIndex]);
+        const index = (i * 6 + j) % animals.length;
+        row.push(animals[index]);
       }
-
+  
       table.push(row);
     }
-
+  
     console.table(table);
   }
