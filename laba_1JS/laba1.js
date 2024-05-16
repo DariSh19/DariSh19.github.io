@@ -33,11 +33,24 @@ function showCrows() {
 }
 
 function showNum() {
-    let num;
+  let userInput;
 
-    do {
-        num = prompt("Введите число больше 100?", 0);
-    } while (num <= 100 && num);
+  while (true) {
+    userInput = prompt("Введите число, большее 100:");
+
+    if (userInput === null) {
+      return;
+    }
+
+    const num = parseInt(userInput);
+
+    if (isNaN(num) || num <= 100) {
+      alert("Введите значение большее 100.");
+    } else {
+      alert("Вы ввели" + num);
+      break;
+    }
+  }
 }
 
 function prstNum() {
