@@ -18,7 +18,7 @@ function showAge() {
 }
 
 function showCrows() {
-    let num = prompt('На ветке сидит num ворон?');
+    let num = prompt('Введите целое число:');
     if ((num%100>=5 && num%100 <=20)||(num%100==0))
         {
             alert(`На ветке сидит ${num} ворон`);
