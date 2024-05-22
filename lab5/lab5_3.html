@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
+
 <head>
     <meta charset="utf-8">
     <title>Использование float при построении колонок</title>
     <style>
-        #container{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 5px; 
-        }
         #left {
             box-sizing: border-box;
             display: inline-block;
@@ -27,8 +23,8 @@
         #right {
             box-sizing: border-box;
             display: inline-block;
-            background: #fcc;
             width: 200px;
+            background: #fcc;
         }
         
 
@@ -37,9 +33,8 @@
 </head>
 
 <body>
-    <div id="container">
     <div id="left">left<br>left<br>left<br>left<br>left</div>
-    <div id="center">text text text text text text text text text text text text text text text text text text
+    <div id="center">center text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
@@ -54,7 +49,7 @@
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text</div>
     <div id="right">right<br>right<br>right<br>right</div>
-    </div>
+    
 </body>
 
 </html>

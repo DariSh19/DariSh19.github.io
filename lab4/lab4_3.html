@@ -16,11 +16,8 @@
 			.menu ul {
 			}
 			
-			.menu li::before {
-                display: inline-block;   
-                background-image: url(pic/css_sprites.png);
-                width: 16px;
-                height: 16px;
+			.menu li {
+                list-style-image: url(pic/minus.gif);
             }
 			
 			.menu li a {
@@ -36,8 +33,12 @@
 					
 			}
 			
-			.menu li li {
-                list-style-image: url(pic/point.gif);
+			.menu li li::before {
+                display: inline-block;  
+                width: 16px;
+                height: 16px;  
+                background-image: url(pic/css_sprites.png);
+                background-position: 0 0px
 			}
 	</style>
 </head>
