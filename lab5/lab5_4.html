@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Использование float при построении колонок</title>
-    <style type="text/css">
+    <style>
         body {
             display: flex;
         }
@@ -36,8 +37,9 @@
 </head>
 
 <body>
-    <div id="left">left<br>left<br>left<br>left<br>left</div>
-    <div id="center">center text text text text text text text text text text text text text text text text text text
+    <div class="container"></div>
+    <div id="left" style="font-size: 1rem">left<br>left<br>left<br>left<br>left</div>
+    <div id="center" style="font-size: 1rem">center text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
@@ -51,11 +53,7 @@
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text</div>
-    <div id="right">right<br>right<br>right<br>right</div>
-    </div>
-    
-    
-
+    <div id="right" style="font-size: 1rem">right<br>right<br>right<br>right</div>
     </body>
 
 </html>
