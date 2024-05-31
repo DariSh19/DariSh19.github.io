@@ -6,8 +6,7 @@
     <title>Использование float при построении колонок</title>
     <style>
         .container {
-            min-width:300px;
-            text-align: center;
+            min-width:1020px;
         }
         
         .column{
@@ -34,8 +33,8 @@
         }
     </style>
 </head>
-<body>
-    <div class="container"></div>
+<body style="font-size: 0">
+    <div class="container" display: inline-block;>
     <div id="left" class="column" style="font-size: 1rem">left<br>left<br>left<br>left<br>left</div>
     <div id="center" class="column" style="font-size: 1rem">center text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text text text text text text text text
@@ -52,5 +51,6 @@
         text text text text text text text text text text text text text text text text text text text text text text
         text text text text text text text text text text text text text text text</div>
     <div id="right" class="column" style="font-size: 1rem">right<br>right<br>right<br>right</div>
+    </div>
 </body>
 </html>
