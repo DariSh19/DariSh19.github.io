@@ -1,4 +1,4 @@
-
+//задания 1,2,3
 class Book {
     constructor(title, pubYear, price) {
         this._title = title;
@@ -58,7 +58,7 @@ books.sort(Book.compare);
 console.log("Книги после сортировки по году издания:");
 for (let i = 0; i < books.length; ++i)
     books[i].show();
-
+//-----------------------------------------------------------------
 // Задание 4
 function isEmpty(_object) {
 
@@ -74,7 +74,7 @@ let obj1 = { [Symbol()]: true };
 let obj2 = {};
 console.log("Объект 1", isEmpty(obj1));
 console.log("Объект 2", isEmpty(obj2));
-
+//-----------------------------------------------------------------
 // Задание 5
 let classObject = {
 
@@ -104,13 +104,13 @@ console.log(classObject.className);
 
 classObject.removeClass('menu');
 console.log(classObject.className);
-
+//-----------------------------------------------------------------
 // Задание 6
 let jsonString = JSON.stringify(classObject, null, 2);
 console.log(jsonString);
 let object2 = JSON.parse(jsonString);
 console.log('Сравнение объектов из JSON:', JSON.stringify(object2) === JSON.stringify(classObject));
-
+//-----------------------------------------------------------------
 // Задание 7
 function getSecondsToday() {
     let now = new Date();
@@ -118,7 +118,7 @@ function getSecondsToday() {
     return Math.floor((now - start) / 1000) // 'cause ms
 }
 console.log("Секунд с начала дня: ", getSecondsToday());
-
+//-----------------------------------------------------------------
 // Задание 8
 function formatDate(date) {
     let day = date.getDate().toString().padStart(2, '0');
