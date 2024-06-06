@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Structure</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        let data = {
+            "Рыбы": {
+                "форель": {},
+                "лосось": {}
+            },
+            "Деревья": {
+                "Огромные": {
+                    "секвойя": {},
+                    "дуб": {}
+                },
+                "Цветковые": {
+                    "яблоня": {},
+                    "магнолия": {}
+                }
+            }
+        };
+
+        function createTree(container, data) {
+            const ul = document.createElement('ul');
+            container.appendChild(ul);
+
+            for (let key in data) {
+                const li = document.createElement('li');
+                li.textContent = key;
+                ul.appendChild(li);
+
+                if (Object.keys(data[key]).length > 0) {
+                    createTree(li, data[key]);
+                }
+            }
+        }
+
+        let container = document.getElementById('container');
+        createTree(container, data);
+    </script>
+</body>
+</html>
