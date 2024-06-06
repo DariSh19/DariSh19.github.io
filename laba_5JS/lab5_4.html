@@ -5,28 +5,22 @@
 	<title>Text</title>
 </head>
 <body>
-	<input type="button" id="hider" value="Спрятать текст">
-
-	<div id="text">Текст</div>
+	<button id="toggleButton" onclick="toggleText()">Спрятать текст</button>
+    <div id="text">Текст</div>
 
 	<script>
-    // Получаем элементы по их id
-    const hiderButton = document.getElementById('hider');
-        const textDiv = document.getElementById('text');
+        function toggleText() {
+            var textElement = document.getElementById("text");
+            var button = document.getElementById("toggleButton");
 
-        // Добавляем обработчик события клика на кнопку
-        hiderButton.addEventListener('click', function() {
-            // Проверяем, виден ли элемент textDiv
-            if (textDiv.style.display === 'none') {
-                // Если элемент скрыт, показываем его и изменяем текст кнопки
-                textDiv.style.display = 'block';
-                hiderButton.value = 'Спрятать текст';
+            if (textElement.style.display === "none") {
+                textElement.style.display = "block";
+                button.textContent = "Спрятать текст";
             } else {
-                // Если элемент виден, скрываем его и изменяем текст кнопки
-                textDiv.style.display = 'none';
-                hiderButton.value = 'Показать текст';
+                textElement.style.display = "none";
+                button.textContent = "Показать текст";
             }
-        });
+        }
 	</script>
 </body>
 </html>
