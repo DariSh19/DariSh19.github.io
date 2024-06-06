@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пенсионный калькулятор</title>
+</head>
+<body>
+    <h2>Пенсионный калькулятор</h2>
+    <form id="calculatorForm">
+        <label for="ageInput">Введите ваш возраст:</label>
+        <input type="number" id="ageInput" required>
+        <br>
+        <label>Выберите ваш пол:</label>
+        <input type="radio" id="maleRadio" name="gender" value="male" required>
+        <label for="maleRadio">Мужской</label>
+        <input type="radio" id="femaleRadio" name="gender" value="female" required>
+        <label for="femaleRadio">Женский</label>
+        <br>
+        <button type="button" id="calculateButton">Рассчитать</button>
+        <button type="button" id="clearButton">Очистить</button>
+    </form>
+    <p id="resultParagraph"></p>
+
+    <script>
+        function showAge() {
+            let age = document.getElementById('ageInput').value;
+            let gender;
+            if (document.getElementById('maleRadio').checked) {
+                gender = "мужской";
+            } else if (document.getElementById('femaleRadio').checked) {
+                gender = "женский";
+            } else {
+                alert("Пожалуйста, выберите пол.");
+                return;
+            }
+            age = parseInt(age);
+
+            let message = '';
+            if (age >= 0 && age <= 17) {
+                message = "Вам работать ещё рано — учитесь";
+            } else if ((gender === "мужской" && age >= 18 && age <= 59) || (gender === "женский" && age >= 18 && age <= 54)) {
+                message = "Вам ещё работать и работать";
+            } else if ((gender === "мужской" && age >= 60 && age <= 64) || (gender === "женский" && age >= 55 && age <= 59)) {
+                message = "Скоро пенсия!";
+            } else if ((gender === "мужской" && age > 65) || (gender === "женский" && age > 60)) {
+                message = "Вам пора на пенсию";
+            } else {
+                message = "Да кто ты такой?";
+            }
+            document.getElementById('resultParagraph').textContent = message;
+        }
+
+        document.getElementById('calculateButton').addEventListener('click', showAge);
+
+        document.getElementById('clearButton').addEventListener('click', () => {
+            document.getElementById('calculatorForm').reset();
+            document.getElementById('resultParagraph').textContent = '';
+        });
+    </script>
+</body>
+</html>

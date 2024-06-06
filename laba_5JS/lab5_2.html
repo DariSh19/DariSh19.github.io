@@ -359,7 +359,22 @@
         </tbody>
     </table>
     <script>
-        /* ваш код */
+        let board = document.querySelectorAll('td[style="position:relative"], td:not([style])')
+        let c = 1
+        for (square of board){
+            if(c==17) c = 1
+            if(c<9)
+                if(c%2==1)
+                    square.style.backgroundColor = "#ffce9e"
+                else
+                    square.style.backgroundColor = "#d18b47"
+            else
+                if(c%2==0)
+                    square.style.backgroundColor = "#ffce9e"
+                else
+                    square.style.backgroundColor = "#d18b47"
+            c++
+        }
     </script>
 </body>
 
