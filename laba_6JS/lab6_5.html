@@ -21,9 +21,9 @@
 
         #modal {
             background: rgb(248, 156, 225);
-            padding: 20px;
+            padding: 30px;
             border-radius: 5px;
-            max-width: 300px;
+            max-width: 400px;
             width: 100%;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
@@ -52,7 +52,7 @@
             modal.id = 'modal';
             overlay.appendChild(modal);
 
-            // модальное окна
+            
             modal.innerHTML = `
             <form id="modal-form">
                 <div>${html}</div>
@@ -64,24 +64,20 @@
             </form>
             `;
 
-            // отображение окна и фокус на input
             overlay.style.display = 'flex';
             let input = document.getElementById('modal-input');
             input.focus();
 
-            // обработчик ОК
             document.getElementById('modal-ok').onclick = function () {
                 callback(input.value);
                 closeModal();
             };
 
-            // обработчик для отмены
             document.getElementById('modal-cancel').onclick = function () {
                 callback(null);
                 closeModal();
             };
 
-            // обработчик для клавиш
             input.onkeydown = function (event) {
                 if (event.key === 'Enter') {
                     event.preventDefault();
@@ -98,7 +94,6 @@
                 document.body.removeChild(overlay);
             }
 
-            // Переключение фокуса через таб и шифт-таб (назад)
             modal.onkeydown = function (event) {
                 if (event.key === 'Tab') {
                     let focusableElements = modal.querySelectorAll('input, button');
@@ -120,7 +115,7 @@
             };
         }
 
-        showPrompt("Введите что-нибудь<br> умное:", function (value) {
+        showPrompt("Введите что-нибудь<br>...умное:", function (value) {
             alert(value);
         });
     </script>
