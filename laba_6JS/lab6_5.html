@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальное окно с формой</title>
+    <style>
+        body.modal-open {
+            overflow: hidden;
+        }
+        #modalOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        #modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+        }
+        #modal input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        #modal .buttons {
+            text-align: right;
+        }
+        #modal button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+function showPrompt(html, callback) {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'modalOverlay';
+    const modal = document.createElement('div');
+    modal.id = 'modal';
+    
+    const form = document.createElement('form');
+    form.innerHTML = html + `
+        <input type="text" name="inputField">
+        <div class="buttons">
+            <button type="submit">OK</button>
+            <button type="button" id="cancelButton">ОТМЕНА</button>
+        </div>
+    `;
+    modal.appendChild(form);
+    modalOverlay.appendChild(modal);
+    document.body.appendChild(modalOverlay);
+    
+    const inputField = form.querySelector('input[name="inputField"]');
+    const okButton = form.querySelector('button[type="submit"]');
+    const cancelButton = form.querySelector('#cancelButton');
+    
+    function closeModal() {
+        document.body.removeChild(modalOverlay);
+        document.body.classList.remove('modal-open');
+    }
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        callback(inputField.value);
+        closeModal();
+    });
+    
+    cancelButton.addEventListener('click', function() {
+        callback(null);
+        closeModal();
+    });
+    
+    modalOverlay.addEventListener('click', function(event) {
+        if (event.target === modalOverlay) {
+            callback(null);
+            closeModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            callback(null);
+            closeModal();
+        }
+    });
+    
+    let focusableElements = modal.querySelectorAll('input, button');
+    focusableElements = Array.prototype.slice.call(focusableElements);
+    
+    form.addEventListener('keydown', function(event) {
+        const focusIndex = focusableElements.indexOf(document.activeElement);
+        
+        if (event.key === 'Tab') {
+            if (event.shiftKey) {
+                if (focusIndex === 0) {
+                    focusableElements[focusableElements.length - 1].focus();
+                    event.preventDefault();
+                }
+            } else {
+                if (focusIndex === focusableElements.length - 1) {
+                    focusableElements[0].focus();
+                    event.preventDefault();
+                }
+            }
+        }
+    });
+    
+    document.body.classList.add('modal-open');
+    modalOverlay.style.display = 'block';
+    inputField.focus();
+}
+
+showPrompt("Введите что-нибудь<br> умное:", function(value) {
+    alert(value);
+});
+</script>
+
+</body>
+</html>

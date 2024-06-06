@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пенсионный калькулятор</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-actions {
+            margin-top: 20px;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Пенсионный калькулятор</h1>
+    <form id="pension-form">
+        <div class="form-group">
+            <label for="age">Возраст:</label>
+            <input type="number" id="age" name="age" min="0" max="120" required>
+        </div>
+        <div class="form-group">
+            <label>Пол:</label>
+            <label><input type="radio" name="gender" value="male" required> Мужской</label>
+            <label><input type="radio" name="gender" value="female" required> Женский</label>
+        </div>
+        <div class="form-actions">
+            <button type="button" id="calculate-button">Рассчитать</button>
+            <button type="button" id="reset-button">Очистить</button>
+        </div>
+    </form>
+    <p id="result"></p>
+    <script>
+        function getYearsText(years) {
+            if (years % 10 === 1 && years % 100 !== 11) {
+                return `${years} год`;
+            } else if ([2, 3, 4].includes(years % 10) && ![12, 13, 14].includes(years % 100)) {
+                return `${years} года`;
+            } else {
+                return `${years} лет`;
+            }
+        }
+
+        document.getElementById('calculate-button').addEventListener('click', function() {
+            // Получаем значения из формы
+            const age = document.getElementById('age').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+
+            // Определяем пенсионный возраст
+            const retirementAge = gender === 'male' ? 65 : 60;
+
+            // Вычисляем и выводим результат
+            let resultText;
+            if (age >= retirementAge) {
+                resultText = 'Вы уже достигли пенсионного возраста.';
+            } else {
+                const yearsLeft = retirementAge - age;
+                resultText = `Вам осталось ${getYearsText(yearsLeft)} до пенсионного возраста.`;
+            }
+
+            document.getElementById('result').textContent = resultText;
+        });
+
+        document.getElementById('reset-button').addEventListener('click', function() {
+            // Сбрасываем форму и очищаем результат
+            document.getElementById('pension-form').reset();
+            document.getElementById('result').textContent = '';
+        });
+    </script>
+
+
+</body>
+</html>

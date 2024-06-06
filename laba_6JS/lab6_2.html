@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плейсхолдер-подсказка</title>
+    <style>
+		.placeholder:-moz-placeholder{
+			color: blue;
+		}
+
+		.placeholder::-webkit-input-placeholder{
+			color: blue;
+		}
+
+		div{
+			color: blue;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+    <div></div>
+	<input type="text" class="data-placeholder" data-placeholder="Введите текст"> 
+	
+	<script>
+		'use strict';
+
+		let input = document.querySelector(".data-placeholder");
+		let div = document.querySelector("div");
+
+		input.onfocus = function(){
+			div.innerHTML = input.getAttribute("data-placeholder");
+			input.setAttribute("data-placeholder","");
+		}; 
+		
+		input.onblur = function(){ 
+			input.setAttribute("data-placeholder",div.innerHTML);
+			div.innerHTML = ""; 
+		}; 
+	</script>
+</body>
+</html>

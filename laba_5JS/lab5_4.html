@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Text</title>
+</head>
+<body>
+	<input type="button" id="hider" value="Спрятать текст">
+
+	<div id="text">Текст</div>
+
+	<script>
+    // Получаем элементы по их id
+    const hiderButton = document.getElementById('hider');
+        const textDiv = document.getElementById('text');
+
+        // Добавляем обработчик события клика на кнопку
+        hiderButton.addEventListener('click', function() {
+            // Проверяем, виден ли элемент textDiv
+            if (textDiv.style.display === 'none') {
+                // Если элемент скрыт, показываем его и изменяем текст кнопки
+                textDiv.style.display = 'block';
+                hiderButton.value = 'Спрятать текст';
+            } else {
+                // Если элемент виден, скрываем его и изменяем текст кнопки
+                textDiv.style.display = 'none';
+                hiderButton.value = 'Показать текст';
+            }
+        });
+	</script>
+</body>
+</html>
