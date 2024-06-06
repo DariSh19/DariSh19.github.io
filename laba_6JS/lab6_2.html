@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 2</title>
+
+    <title>Плейсхолдер-подсказка</title>
     <style>
-		.placeholder:-moz-placeholder{
-			color: blue;
-		}
-
-		.placeholder::-webkit-input-placeholder{
-			color: blue;
-		}
-
-		div{
-			color: blue;
-			font-size: 12px;
-		}
-	</style>
+        ::placeholder {
+            color: rgb(12, 12, 152);
+        }
+    </style>
 </head>
+
 <body>
-    <div></div>
-	<input type="text" class="data-placeholder" data-placeholder="подсказка"> 
-	
-	<script>
-		'use strict';
 
-		let input = document.querySelector(".data-placeholder");
-		let div = document.querySelector("div");
+    <form id="form">
+        <label for="placeholder"></label>
+        <input id="placeholder" type="text" data-placeholder="Введите текст">
+    </form>
 
-		input.onfocus = function(){
-			div.innerHTML = input.getAttribute("data-placeholder");
-			input.setAttribute("data-placeholder","");
-		}; 
-		
-		input.onblur = function(){ 
-			input.setAttribute("data-placeholder",div.innerHTML);
-			div.innerHTML = ""; 
-		}; 
-	</script>
+    <script>
+        'use strict';
+
+        let form = document.getElementById("form");
+        let field = form.getElementsByTagName('input')[0];
+        let label = form.getElementsByTagName('label')[0];
+
+        label.style.visibility = 'hidden';
+
+        field.setAttribute('placeholder', field.dataset.placeholder);
+        label.innerHTML = field.dataset.placeholder;
+
+        field.addEventListener('focus', () => {
+            label.style.visibility = 'visible';
+            field.setAttribute('placeholder', '');
+        });
+
+        field.addEventListener('blur', () => {
+            label.style.visibility = 'hidden';
+            field.setAttribute('placeholder', field.dataset.placeholder);
+
+        });
+
+    </script>
+
 </body>
+
 </html>
