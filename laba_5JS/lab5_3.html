@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Structure</title>
+    <title>Вложенный список</title>
 </head>
 <body>
     <div id="container"></div>
-
     <script>
         let data = {
             "Рыбы": {
@@ -25,7 +24,6 @@
                 }
             }
         };
-
         function createTree(container, data) {
             const ul = document.createElement('ul');
             container.appendChild(ul);
@@ -40,7 +38,6 @@
                 }
             }
         }
-
         let container = document.getElementById('container');
         createTree(container, data);
     </script>
