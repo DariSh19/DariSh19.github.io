@@ -79,6 +79,7 @@ console.log("Объект 2", isEmpty(obj2));
 let classObject = {
 
     className: "open menu",
+
     addClass(cls) {
         let classes = this.className.split(' ');
         if (!classes.includes(cls))
@@ -86,6 +87,7 @@ let classObject = {
 
         return this;
     },
+
     removeClass(cls) {
         let classes = this.className.split(' ');
         let index = classes.indexOf(cls);
@@ -96,6 +98,7 @@ let classObject = {
         }
     }
 }
+
 classObject.addClass('close');
 console.log(classObject.className);
 
@@ -108,5 +111,6 @@ console.log(classObject.className);
 // Задание 6
 let jsonString = JSON.stringify(classObject, null, 2);
 console.log(jsonString);
+
 let object2 = JSON.parse(jsonString);
 console.log('Сравнение объектов из JSON:', JSON.stringify(object2) === JSON.stringify(classObject));
